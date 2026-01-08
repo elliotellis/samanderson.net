@@ -9,6 +9,8 @@
 
 <Header collapsedByDefault={true} />
 
+<div class="debug-measure" style="width: 2rem; height: 1rem;"></div>
+
 <main>
 
   <section class="hero">
@@ -27,12 +29,29 @@
 
 <style>
   .hero {
+    height: calc(100vh - var(--m-nav-height-collapsed));
+    overflow-y: hidden;
     padding-top: 0.75rem;
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .text-container {
-    padding-bottom: 3rem;
+    height: 7.5rem;
+    flex-shrink: 0;
+  }
+
+  .media-container {
+    height: calc(100vh - 7.5rem - var(--m-nav-height-collapsed));
+    flex-grow: 0;
+    min-height: 0;
+  }
+
+  .media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
 </style>

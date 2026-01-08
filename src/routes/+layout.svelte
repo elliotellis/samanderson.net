@@ -91,6 +91,7 @@
 
 		.media-container img {
 			width: 100%;
+			display: block;
 		}
 
 		.grid {
@@ -106,7 +107,7 @@
 
 		.debug {
 			position: fixed;
-			top: 0;right: 0;
+			top: 0; right: 0;
 			font-family: Arial;
 			background-color: yellow;
 			color: black;
@@ -118,6 +119,12 @@
 			content: 'Debug information';
 			font-weight: 400;
 			font-size: 15px;
+		}
+
+		.debug-measure {
+			position: fixed;
+			top: 0; left: 0;
+			background-color: orange;
 		}
 
   } /* :global */

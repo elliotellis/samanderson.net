@@ -43,12 +43,9 @@
   }
 
   .project-item {
-    border-top: 0.1rem solid var(--c-f);
+    display: block;
+    border-top: var(--g-b);
     padding-top: 0.5rem;
-  }
-
-  .media-container {
-    margin-bottom: 0.25rem;
   }
 
   .text-container {
