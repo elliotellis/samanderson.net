@@ -12,7 +12,7 @@
 
 <style>
 	:global {
-    *, *::before, *::after {
+		*, *::before, *::after {
       box-sizing: border-box;
     }
 
@@ -101,6 +101,22 @@
 
 		.grid > * {
 			grid-column: col-start / span 12;
+		}
+
+		.debug {
+			position: fixed;
+			top: 0;right: 0;
+			font-family: Arial;
+			background-color: yellow;
+			color: black;
+			font-weight: 700;
+			padding: 5px;
+		}
+
+		.debug::before {
+			content: 'Debug information';
+			font-weight: 400;
+			font-size: 15px;
 		}
 
   } /* :global */
