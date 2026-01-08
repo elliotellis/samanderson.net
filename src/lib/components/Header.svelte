@@ -46,7 +46,7 @@
   }
 
   nav.collapsed {
-    height: 0.5rem;
+    height: var(--m-nav-height-collapsed);
   }
 
   a {

@@ -37,6 +37,7 @@
 
 			/* Measurements */
 			--m-nav-height: 2.5rem;
+			--m-nav-height-collapsed: 0.5rem;
 			--m-transition-duration: 1s;
 
       font-size: var(--t-s);
@@ -56,7 +57,7 @@
       min-width: 320px;
       min-height: 100vh;
 			margin: 0;
-			padding: var(--m-nav-height) 0 0;
+			padding: var(--m-nav-height-collapsed) 0 0;
     }
 
     i { font-style: italic; }

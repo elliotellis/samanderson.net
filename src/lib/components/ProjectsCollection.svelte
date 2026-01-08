@@ -41,36 +41,33 @@
     row-gap: 3rem;
     justify-items: stretch;
   }
-/*
+
   .project-item {
-    border-top: 0.2rem solid var(--c-k);
+    border-top: 0.1rem solid var(--c-f);
     padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 0.5rem solid var(--c-k);
-  }*/
+  }
 
   .media-container {
     margin-bottom: 0.25rem;
   }
-/*
+
   .text-container {
-    padding-top: 2rem;
-  }*/
+    padding-bottom: 1.5rem;
+  }
 
   .text-container > * {
-    max-width: 24rem;
+    max-width: 40rem;
   }
 
   h3 {
-    margin: 0 0 0.125rem 0;
-    font-size: 1.125rem;
+    margin: 0;
     color: var(--c-k);
+    font-size: 1rem;
   }
 
   p { 
     margin: 0; 
-    color: var(--c-f); 
-    font-weight: 300;
+    color: var(--c-f);
   }
   
   a {

@@ -12,7 +12,7 @@
 <main>
 
   <section class="hero">
-    <div>
+    <div class="text-container">
       <h1>Sam Anderson<br/></h1>
       <h2>Director, producer &amp; editor</h2>
     </div>
@@ -27,8 +27,12 @@
 
 <style>
   .hero {
-    padding-top: 4rem;
+    padding-top: 0.75rem;
     margin-bottom: 4rem;
+  }
+
+  .text-container {
+    padding-bottom: 3rem;
   }
 
 </style>
