@@ -11,7 +11,7 @@
 <header class="grid">
 	<nav class:collapsed={scrollY < 250 && collapsedByDefault == true ? true : false}>
     <ul class="logo">
-      <li><a href="/">Sam Anderson</a></li>
+      <li><a href="/">Sam&nbsp;Anderson</a></li>
     </ul>
     <ul class="pages">
       <li>

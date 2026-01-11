@@ -9,13 +9,13 @@
 
 <Header collapsedByDefault={true} />
 
-<div class="debug-measure" style="width: 2rem; height: 1rem;"></div>
+<div class="debug-measure" style="width: 2rem; height: 1.25rem; top: 0.5rem;"></div>
 
 <main>
 
   <section class="hero">
     <div class="text-container">
-      <h1>Sam Anderson<br/></h1>
+      <h1>Sam&nbsp;Anderson<br/></h1>
       <h2>Director, producer &amp; editor</h2>
     </div>
     <div class="media-container">
@@ -31,14 +31,14 @@
   .hero {
     height: calc(100vh - var(--m-nav-height-collapsed));
     overflow-y: hidden;
-    padding-top: 0.75rem;
+    padding-top: 1rem;
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
   }
 
   .text-container {
-    height: 7.5rem;
+    height: 7rem;
     flex-shrink: 0;
   }
 
