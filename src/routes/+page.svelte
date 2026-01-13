@@ -1,25 +1,29 @@
 <script>
+  let { data } = $props();
 	import Header from '$lib/components/Header.svelte';
   import ProjectsCollection from "$lib/components/ProjectsCollection.svelte";
+  console.log(data);
 </script>
 
 <svelte:head>
-  <title>Sam Anderson – Director, producer &amp; editor</title>
+  <title>Sam Anderson &ndash; Director, producer &amp; editor</title>
 </svelte:head>
 
 <Header collapsedByDefault={true} />
 
-<div class="debug-measure" style="width: 2rem; height: 1.25rem; top: 0.5rem;"></div>
+<div class="debug">
+  {JSON.stringify(data, null, 2)}
+</div>
 
 <main>
 
   <section class="hero">
     <div class="text-container">
       <h1>Sam&nbsp;Anderson<br/></h1>
-      <h2>Director, producer &amp; editor</h2>
+      <h2>{data.siteSettings[0].siteSubheading}</h2>
     </div>
     <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
+      <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop></video>
     </div>
   </section>
 
@@ -52,6 +56,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
   }
 
 </style>

@@ -113,6 +113,8 @@
 			color: black;
 			font-weight: 700;
 			padding: 5px;
+			opacity: 25%;
+			max-width: 40%;
 		}
 
 		.debug::before {

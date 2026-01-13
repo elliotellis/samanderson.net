@@ -6,8 +6,6 @@
 
 <svelte:window bind:scrollY={scrollY} />
 
-<div class="debug"></div>
-
 <header class="grid">
 	<nav class:collapsed={scrollY < 250 && collapsedByDefault == true ? true : false}>
     <ul class="logo">
