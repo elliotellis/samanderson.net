@@ -27,7 +27,7 @@
     </div>
   </section>
 
-  <ProjectsCollection />
+  <ProjectsCollection projects={data.projects} />
 
 </main>
 

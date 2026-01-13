@@ -1,14 +1,20 @@
+<script>
+  let { projects } = $props();
+</script>
+
 <section class="projects-collection-container grid">
 
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
+  {#each projects as project}
+    <a class="project-item" href={'/projects/' + project.slug.current}>
+      <div class="text-container">
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </div>
+      <div class="media-container">
+        <img src="https://placehold.co/160x90" alt="123">
+      </div>
+    </a>
+  {/each}
 
   <a class="project-item" href="#">
     <div class="text-container">
