@@ -1,7 +1,19 @@
 import client from '$lib/sanity'
 
 export async function load() {
-  const projectsQuery = `*[_type == "project"]{title, slug, description, thumbnail}`
+  const projectsQuery = `
+    *[_type == "project"]
+    {
+      title, 
+      slug, 
+      description, 
+      thumbnail {
+        "url": asset->url,
+        ...
+      }
+    }
+  `
+
   const siteSettingsQuery = `
     *[_id == "siteSettings"]
     {

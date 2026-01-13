@@ -11,7 +11,7 @@
         <p>{project.description}</p>
       </div>
       <div class="media-container">
-        <img src="https://placehold.co/160x90" alt="123">
+        <enhanced:img src={project.thumbnail.url} alt="An alt text" />
       </div>
     </a>
   {/each}
