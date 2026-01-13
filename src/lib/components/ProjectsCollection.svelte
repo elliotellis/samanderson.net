@@ -1,4 +1,34 @@
-<section class="projects-collection-container">
+<section class="projects-collection-container grid">
+
+  <a class="project-item" href="#">
+    <div class="text-container">
+      <h3>The FA / England national football&nbsp;teams</h3>
+      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
+    </div>
+    <div class="media-container">
+      <img src="https://placehold.co/160x90" alt="123">
+    </div>
+  </a>
+
+  <a class="project-item" href="#">
+    <div class="text-container">
+      <h3>The FA / England national football&nbsp;teams</h3>
+      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
+    </div>
+    <div class="media-container">
+      <img src="https://placehold.co/160x90" alt="123">
+    </div>
+  </a>
+
+  <a class="project-item" href="#">
+    <div class="text-container">
+      <h3>The FA / England national football&nbsp;teams</h3>
+      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
+    </div>
+    <div class="media-container">
+      <img src="https://placehold.co/160x90" alt="123">
+    </div>
+  </a>
 
   <a class="project-item" href="#">
     <div class="text-container">
@@ -35,10 +65,6 @@
 
 <style>
   .projects-collection-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 3rem;
     justify-items: stretch;
   }
 
@@ -46,6 +72,12 @@
     display: block;
     border-top: var(--g-b);
     padding-top: 0.5rem;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .project-item {
+      grid-column: span 6;
+    }
   }
 
   .text-container {

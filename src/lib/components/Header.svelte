@@ -32,7 +32,6 @@
 
   nav {
     height: var(--m-nav-height);
-    grid-column: col-start / span 6;
     display: grid;
     grid-template-columns: subgrid;
     margin-left: -2rem;
@@ -68,11 +67,34 @@
   }
 
   .logo {
-    grid-column: col-start / span 2;
     font-weight: var(--t-w-bold);
   }
 
-  .pages {
-    grid-column: col-start 3 / span 4;
+  @media only screen and (min-width: 800px) {
+    nav {
+      grid-column: col-start / span 8;
+    }
+
+    .logo {
+      grid-column: col-start / span 3;
+    }
+
+    .pages {
+      grid-column: col-start 4 / span 5;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    nav {
+      grid-column: col-start / span 6;
+    }
+
+    .logo {
+      grid-column: col-start / span 2;
+    }
+
+    .pages {
+      grid-column: col-start 3 / span 4;
+    }
   }
 </style>

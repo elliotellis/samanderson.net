@@ -10,7 +10,10 @@
 
 {@render children()}
 
+<footer></footer>
+
 <style>
+
 	:global {
 		*, *::before, *::after {
       box-sizing: border-box;
@@ -36,6 +39,7 @@
 			--g-b: 2px solid var(--c-f);
 
 			/* Measurements */
+			--m-site-padding: 2rem;
 			--m-nav-height: 2.5rem;
 			--m-nav-height-collapsed: 0.5rem;
 			--m-transition-duration: 1s;
@@ -86,7 +90,7 @@
 		}
 
 		section {
-			padding: 2rem;
+			padding: var(--m-site-padding);
 		}
 
 		.media-container img {
@@ -113,8 +117,12 @@
 			color: black;
 			font-weight: 700;
 			padding: 5px;
-			opacity: 25%;
+			opacity: 5%;
 			max-width: 40%;
+		}
+
+		.debug:hover {
+			opacity: 50%;
 		}
 
 		.debug::before {
@@ -130,4 +138,12 @@
 		}
 
   } /* :global */
+
+	footer {
+		height: 1.25rem;
+		margin-top: 4rem;
+		margin-left: var(--m-site-padding);
+		background-color: var(--c-k);
+	}
+
 </style>

@@ -18,7 +18,7 @@
 <main>
 
   <section class="hero">
-    <div class="text-container">
+    <div class="text-container grid">
       <h1>Sam&nbsp;Anderson<br/></h1>
       <h2>{data.siteSettings[0].siteSubheading}</h2>
     </div>
@@ -44,18 +44,19 @@
   .text-container {
     height: 7rem;
     flex-shrink: 0;
+    row-gap: 0;
+    grid-auto-rows: min-content;
+
+  }
+
+  .text-container > * {
+    grid-column: col-start / span 6;
   }
 
   .media-container {
     height: calc(100vh - 7.5rem - var(--m-nav-height-collapsed));
     flex-grow: 0;
     min-height: 0;
-  }
-
-  .media-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .media-container video {
