@@ -6,7 +6,7 @@
 
 <svelte:window bind:scrollY={scrollY} />
 
-<header class="grid">
+<header class="site-header grid">
 	<nav class:collapsed={scrollY < 250 && collapsedByDefault == true ? true : false}>
     <ul class="logo">
       <li><a href="/">Sam&nbsp;Anderson</a></li>
@@ -23,7 +23,7 @@
 </header>
 
 <style>
-  header {
+  .site-header {
     position: fixed;
     top: 0;
     left: 0;

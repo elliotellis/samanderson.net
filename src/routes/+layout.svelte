@@ -14,6 +14,27 @@
 
 <style>
 
+  @font-face {
+		font-family: 'Sam';
+		src: url('$lib/fonts/regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+	}
+
+  @font-face {
+		font-family: 'Sam';
+		src: url('$lib/fonts/italic.woff2') format('woff2');
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Sam';
+		src: url('$lib/fonts/bold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+	}
+
 	:global {
 		*, *::before, *::after {
       box-sizing: border-box;
@@ -25,10 +46,10 @@
 			--c-bo: rgb(229, 225, 235);
       --c-f: rgb(35, 32, 46); /* Foreground colour */
 			--c-g: rgb(104, 96, 116);
-			--c-k: rgb(100, 58, 227);
+			--c-k: rgb(48, 45, 255);
 
 			/* Typography */
-      --t-f: 'Focal Maxi Trial', 'Neue Haas Unica Pro', sans-serif; /* Typeface */
+      --t-f: 'Sam', 'Verdana', sans-serif; /* Typeface */
       --t-s: 20px; /* Type size */
       --t-l-body: 1.2; /* Body leading */
       --t-l-head: 1.1; /* Headings leading */
@@ -62,6 +83,8 @@
       min-height: 100vh;
 			margin: 0;
 			padding: var(--m-nav-height-collapsed) 0 0;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
     }
 
     i { font-style: italic; }
