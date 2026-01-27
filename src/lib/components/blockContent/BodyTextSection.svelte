@@ -8,7 +8,9 @@
 <section class="content-section body-text-section grid subgrid">
   <BodyTextContainer value={portableText.value.mainText} />
   <CaptionContainer value={portableText.value.caption} />
+  {#if portableText.value.image}
   <div class="media-container">
     <enhanced:img src={portableText.value.image} alt={portableText.value.imageAlt} />
   </div>
+  {/if}
 </section>
