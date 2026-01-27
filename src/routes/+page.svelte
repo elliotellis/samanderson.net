@@ -19,7 +19,7 @@
       <h2>{data.siteSettings[0].siteSubheading}</h2>
     </div>
     <div class="media-container">
-      <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop></video>
+      <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop playsinline></video>
     </div>
   </section>
 
