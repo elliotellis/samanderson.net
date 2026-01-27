@@ -4,7 +4,9 @@
   import VideoWithCaption from '$lib/components/blockContent/VideoWithCaption.svelte'
   import BodyTextSection from '$lib/components/blockContent/BodyTextSection.svelte'
   import { PortableText } from '@portabletext/svelte';
+  import { page } from '$app/state';
   let { data } = $props();
+  //console.log(data);
 </script>
 
 <Header />
@@ -12,13 +14,16 @@
 <article>
 
   <header class="page-title-area grid site-padding">
-    <h1>{data.project.title}</h1>
-    <h2>{data.project.description}</h2>
+    {#if data.page.titleShown}
+      <h1>testestetstetes {data.page.title}</h1>
+    {/if}
+    <h2>{data.page.description}</h2>
   </header>
 
-  <main class="project-main-content grid site-padding">
+  {#if data.page.body}
+  <main class="page-main-content grid site-padding">
     <PortableText 
-      value={data.project.body}
+      value={data.page.body}
       
       components={{
         types: {
@@ -28,10 +33,11 @@
       }}
     />
   </main>
+  {/if}
 
 </article>
 
-<Footer />
+<Footer siteCredit={page.url.pathname === '/about'} />
 
 <style>
   .page-title-area {

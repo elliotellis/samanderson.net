@@ -1,6 +1,5 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-
 	let { children } = $props();
 </script>
 
@@ -9,8 +8,6 @@
 </svelte:head>
 
 {@render children()}
-
-<footer></footer>
 
 <style>
 
@@ -86,7 +83,7 @@
 			margin: 0;
 			padding: var(--m-nav-height-collapsed) 0 0;
       display: grid;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: 1fr auto;
     }
 
     i { font-style: italic; }
@@ -94,6 +91,10 @@
 
     a { color: var(--c-f); }
     a:hover { color: var(--c-f); }
+
+    a[target="_blank"]:after {
+      content: '\2197';
+    }
 
 		ul {
     	padding: 0;
@@ -192,17 +193,5 @@
 
   } /* :global */
 
-	footer {
-		height: 1.25rem;
-		margin-top: 4rem;
-		background-color: var(--c-k);
-    margin-left: var(--m-site-padding--mob);
-	}
-
-  @media only screen and (min-width: 600px) {
-    footer {
-      margin-left: var(--m-site-padding);
-    }
-  }
 
 </style>

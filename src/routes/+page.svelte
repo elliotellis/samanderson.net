@@ -1,6 +1,7 @@
 <script>
   let { data } = $props();
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
   import ProjectsCollection from "$lib/components/ProjectsCollection.svelte";
 </script>
 
@@ -25,6 +26,8 @@
   <ProjectsCollection projects={data.projects} />
 
 </main>
+
+<Footer />
 
 <style>
   .hero {
