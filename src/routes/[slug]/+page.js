@@ -13,6 +13,11 @@ export async function load({ params, fetch }) {
           "altText": thumbnail.alt,
           "videoFile": videoFile.asset->url
         },
+        _type == "bodyText" => {
+          ...,
+          "image": image.asset->url,
+          "imageAlt": image.alt
+        }
       }
     }`
 

@@ -6,7 +6,7 @@
   import { PortableText } from '@portabletext/svelte';
   import { page } from '$app/state';
   let { data } = $props();
-  //console.log(data);
+  console.log(data);
 </script>
 
 <Header />

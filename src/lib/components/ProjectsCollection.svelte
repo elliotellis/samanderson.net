@@ -11,7 +11,7 @@
         <p>{project.description}</p>
       </div>
       <div class="media-container">
-        <enhanced:img src={project.thumbnail.url} alt="An alt text" />
+        <enhanced:img src={project.thumbnail.url} alt={project.thumbnail.alt} />
       </div>
     </a>
   {/each}
