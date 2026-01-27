@@ -16,57 +16,6 @@
     </a>
   {/each}
 
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
-
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
-
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
-
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
-
-  <a class="project-item" href="#">
-    <div class="text-container">
-      <h3>The FA / England national football&nbsp;teams</h3>
-      <p>Shaping the tone, pace and visual identity of England Football’s digital storytelling across YouTube & social platforms.</p>
-    </div>
-    <div class="media-container">
-      <img src="https://placehold.co/160x90" alt="123">
-    </div>
-  </a>
-
-
 </section>
 
 <style>
