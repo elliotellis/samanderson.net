@@ -2,7 +2,7 @@
   let { projects } = $props();
 </script>
 
-<section class="projects-collection-container grid">
+<section class="projects-collection-container grid site-padding">
 
   {#each projects as project}
     <a class="project-item" href={'/projects/' + project.slug.current}>
@@ -110,5 +110,11 @@
     text-decoration: none;
   }
 
-  a:hover h3 {  }
+  .media-container {
+    transition: opacity var(--m-transition-duration) ease-in-out;
+  }
+
+  .project-item:hover .media-container {
+    opacity: 0.8;
+  }
 </style>

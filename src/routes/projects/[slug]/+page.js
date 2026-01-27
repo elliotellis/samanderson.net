@@ -7,10 +7,12 @@ export async function load({ params, fetch }) {
       ...,
       body[]{
         ...,
-        _type == "image" => {
+        _type == "videoWithCaption" => {
           ...,
-          asset->
-        }
+          "thumbnail": thumbnail.asset->url,
+          "altText": thumbnail.alt,
+          "videoFile": videoFile.asset->url
+        },
       }
     }`
 

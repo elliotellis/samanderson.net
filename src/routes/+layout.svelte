@@ -43,7 +43,7 @@
     :root {
 			/* Colours */
       --c-b: rgb(255, 255, 255); /* Background colour */
-			--c-bo: rgb(229, 225, 235);
+			--c-bo: rgb(202, 198, 209);
       --c-f: rgb(35, 32, 46); /* Foreground colour */
 			--c-g: rgb(104, 96, 116);
 			--c-k: rgb(48, 45, 255);
@@ -61,9 +61,11 @@
 
 			/* Measurements */
 			--m-site-padding: 2rem;
+			--m-site-padding--mob: 1rem;
 			--m-nav-height: 2.5rem;
+			--m-nav-height--mob: 3.5rem;
 			--m-nav-height-collapsed: 0.5rem;
-			--m-transition-duration: 1s;
+			--m-transition-duration: 0.6s;
 
       font-size: var(--t-s);
     }
@@ -98,6 +100,10 @@
     	margin: 0;
 		}
 
+    p {
+      margin: 0;
+    }
+
 		h1 {
 			margin: 0;
 			font-size: 2rem;
@@ -107,29 +113,53 @@
 
 		h2 {
 			margin: 0;
-			font-size: 2rem;
+			font-size: 1.5rem;
     	line-height: var(--t-l-head);
 			font-weight: var(--t-w-reg);
 		}
 
-		section {
-			padding: var(--m-site-padding);
-		}
+    h5 {
+      margin: 0;
+      font-size: 0.8rem;
+			color: var(--c-k);
+    }
 
-		.media-container img {
-			width: 100%;
-			display: block;
+		.site-padding {
+			padding: 0 var(--m-site-padding--mob);
 		}
 
 		.grid {
 			width: 100%;
 			display: grid;
   		grid-template-columns: repeat(12, [col-start] 1fr);
-  		gap: 2rem;
+  		gap: var(--m-site-padding--mob);
 		}
 
 		.grid > * {
 			grid-column: col-start / span 12;
+		}
+
+    .subgrid {
+      grid-template-columns: subgrid;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .site-padding {
+        padding: 0 var(--m-site-padding);
+      }
+      .grid {
+        gap: var(--m-site-padding);
+      }
+    }
+
+		.content-section {
+			border-top: var(--g-b);
+      margin-bottom: 4rem;
+		}
+
+		.media-container img {
+			width: 100%;
+			display: block;
 		}
 
 		.debug {
@@ -165,8 +195,14 @@
 	footer {
 		height: 1.25rem;
 		margin-top: 4rem;
-		margin-left: var(--m-site-padding);
 		background-color: var(--c-k);
+    margin-left: var(--m-site-padding--mob);
 	}
+
+  @media only screen and (min-width: 600px) {
+    footer {
+      margin-left: var(--m-site-padding);
+    }
+  }
 
 </style>

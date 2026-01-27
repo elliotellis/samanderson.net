@@ -2,7 +2,6 @@
   let { data } = $props();
 	import Header from '$lib/components/Header.svelte';
   import ProjectsCollection from "$lib/components/ProjectsCollection.svelte";
-  console.log(data);
 </script>
 
 <svelte:head>
@@ -11,13 +10,9 @@
 
 <Header collapsedByDefault={true} />
 
-<div class="debug">
-  {JSON.stringify(data, null, 2)}
-</div>
-
 <main>
 
-  <section class="hero">
+  <section class="hero site-padding">
     <div class="text-container grid">
       <h1>Sam&nbsp;Anderson<br/></h1>
       <h2>{data.siteSettings[0].siteSubheading}</h2>
@@ -36,9 +31,14 @@
     height: calc(100vh - var(--m-nav-height-collapsed));
     overflow-y: hidden;
     padding-top: 1rem;
+    padding-bottom: var(--m-site-padding--mob);
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .hero { padding-bottom: var(--m-site-padding); }
   }
 
   .text-container {
@@ -49,8 +49,14 @@
 
   }
 
-  .text-container > * {
-    grid-column: col-start / span 6;
+  @media only screen and (min-width: 800px) {
+    .text-container > * {
+      grid-column: col-start / span 6;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 
   .media-container {

@@ -7,18 +7,20 @@
 <svelte:window bind:scrollY={scrollY} />
 
 <header class="site-header grid">
-	<nav class:collapsed={scrollY < 250 && collapsedByDefault == true ? true : false}>
-    <ul class="logo">
-      <li><a href="/">Sam&nbsp;Anderson</a></li>
-    </ul>
-    <ul class="pages">
-      <li>
-        <a href="/#projects">Projects</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-    </ul>
+	<nav class="site-padding grid subgrid" class:collapsed={scrollY < 250 && collapsedByDefault == true ? true : false}>
+
+      <ul class="logo">
+        <li><a href="/">Sam&nbsp;Anderson</a></li>
+      </ul>
+
+      <ul class="pages">
+        <li>
+          <a href="/#projects">Projects</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
   </nav>
 </header>
 
@@ -27,19 +29,21 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 0 2rem;
+    margin: 0 var(--m-site-padding--mob);
+    width: calc(100% - 2*var(--m-site-padding--mob));
+    z-index: 2;
   }
 
   nav {
-    height: var(--m-nav-height);
-    display: grid;
-    grid-template-columns: subgrid;
-    margin-left: -2rem;
-    padding: 0 2rem;
+    height: var(--m-nav-height--mob);
+    margin-left: -1rem;
+    padding-right: 0;
+    width: calc(100% + 1rem);
     background-color: var(--c-k);
     color: var(--c-b);
-    transition: height var(--m-transition-duration);
-    overflow-y: hidden;
+    transition: height var(--m-transition-duration) ease-in-out;
+    overflow: hidden;
+    gap: 0;
   }
 
   nav.collapsed {
@@ -52,27 +56,58 @@
     transition: color var(--m-transition-duration) ease-in-out;
   }
 
-  a:hover { color: var(--c-bo); }
+  a:hover { color: var(--c-bo);  }
 
   ul {
-    height: var(--m-nav-height);
     list-style-type: none;
     display: flex;
-    padding: .25rem 0;
+    align-items: end;
   }
 
   li {
-    align-self: flex-end;
     margin-right: 1rem;
   }
 
   .logo {
+    padding-top: 0.5rem;
     font-weight: var(--t-w-bold);
+  }
+
+  .pages {
+    align-items: start;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .site-header {
+      margin: 0 var(--m-site-padding);
+      width: calc(100% - 2*var(--m-site-padding))
+    }
+
+    nav {
+      height: var(--m-nav-height);
+      margin-left: -2rem;
+      width: calc(100% + 2rem);
+      grid-column: col-start / span 12;
+      gap: var(--m-site-padding);
+    }
+
+    ul {
+      height: 2.25rem;
+    }
+
+    .logo { 
+      grid-column: col-start / span 5; 
+    }
+
+    .pages { 
+      grid-column: col-start 6 / span 7; 
+      align-items: end;
+    }
   }
 
   @media only screen and (min-width: 800px) {
     nav {
-      grid-column: col-start / span 8;
+      grid-column: col-start / span 9;
     }
 
     .logo {
@@ -80,7 +115,7 @@
     }
 
     .pages {
-      grid-column: col-start 4 / span 5;
+      grid-column: col-start 4 / span 6;
     }
   }
 
