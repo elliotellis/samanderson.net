@@ -25,7 +25,7 @@
 
   .project-item {
     display: block;
-    border-top: var(--g-b);
+    border-top: var(--standard-top-border);
     padding-top: 0.5rem;
   }
 
@@ -44,14 +44,9 @@
   }
 
   h3 {
-    margin: 0;
-    color: var(--c-k);
-    font-size: 1rem;
-  }
-
-  p { 
-    margin: 0; 
-    color: var(--c-f);
+    color: var(--key-colour);
+    margin-top: 0.125rem;
+    margin-bottom: 0.25rem;
   }
   
   a {
@@ -60,10 +55,10 @@
   }
 
   .media-container {
-    transition: opacity var(--m-transition-duration) ease-in-out;
+    transition: opacity var(--standard-transition-duration) ease-in-out;
   }
 
   .project-item:hover .media-container {
-    opacity: 0.8;
+    opacity: 0.75;
   }
 </style>

@@ -15,15 +15,11 @@
 
 <style>
   .body-container {
-    padding-top: 0.6rem;
-  }
-
-  :global(.body-container > * ) {
-    max-width: 44rem;
+    padding-top: 0.75rem;
   }
 
   :global(.body-container > p:not(:first-child)) {
-    text-indent: 2em;
+    text-indent: 1.5em;
   }
 
   @media only screen and (min-width: 800px) {

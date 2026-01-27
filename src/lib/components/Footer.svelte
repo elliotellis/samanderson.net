@@ -20,18 +20,13 @@
 
 	.footer-margin {
 		height: 1.25rem;
-		background-color: var(--c-k);
-    margin-right: calc(0 - var(--m-site-padding-mob));
+		background-color: var(--key-colour);
+    margin-right: calc(0 - var(--site-xmargin));
 	}
 
-  @media only screen and (min-width: 600px) {
-    .footer-margin {
-      margin-right: calc(0 - var(--m-site-padding));
-    }
-  }
-
   .site-credit, .site-credit a {
-    font-size: 0.8rem;
-    color: var(--c-g);
+    font-size: var(--typesize-caption);
+    line-height: var(--leading-caption);
+    color: var(--text-colour-minor);
   }
 </style>

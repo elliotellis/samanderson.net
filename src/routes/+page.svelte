@@ -31,17 +31,13 @@
 
 <style>
   .hero {
-    height: calc(100vh - var(--m-nav-height-collapsed));
+    height: calc(100vh - var(--nav-height-collapsed));
     overflow-y: hidden;
     padding-top: 1rem;
-    padding-bottom: var(--m-site-padding--mob);
+    padding-bottom: var(--site-xmargin);
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
-  }
-
-  @media only screen and (min-width: 600px) {
-    .hero { padding-bottom: var(--m-site-padding); }
   }
 
   .text-container {
@@ -59,11 +55,12 @@
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: var(--typesize-heading-large);
+    line-height: var(--leading-heading-large);
   }
 
   .media-container {
-    height: calc(100vh - 7.5rem - var(--m-nav-height-collapsed));
+    height: calc(100vh - 7.5rem - var(--nav-height-collapsed));
     flex-grow: 0;
     min-height: 0;
   }
