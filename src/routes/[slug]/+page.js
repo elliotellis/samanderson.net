@@ -20,8 +20,10 @@ export async function load({ params, fetch }) {
         },
         _type == "bodyTextWithPortraitMedia" => {
           ...,
+          "image": image.asset->url,
+          "imageAlt": image.alt,
           "thumbnail": thumbnail.asset->url,
-          "altText": thumbnail.alt,
+          "thumbnailAlt": thumbnail.alt,
           "videoFile": videoFile.asset->url
         },
       }

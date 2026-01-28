@@ -27,29 +27,30 @@
   {/if}
 </section>
 
-<style>
-  @media only screen and (min-width: 800px) {
-    .body-container {
-      grid-column: span 9;
-      order: 1;
+{#if portableText.value.image}
+  <style>
+    @media only screen and (min-width: 800px) {
+      .caption-container { grid-column: col-start 1 / span 3; order: 1; }
+      .body-container {    grid-column: col-start 4 / span 6; order: 2; }
+      .media-container {   grid-column: col-start 10 / span 3; order: 3; }
     }
-  }
 
-  @media only screen and (min-width: 1200px) {
-    .body-container {
-      grid-column: span 10;
+    @media only screen and (min-width: 1200px) {
+      .caption-container { grid-column: col-start 1 / span 2; order: 1; }
+      .body-container {    grid-column: col-start 3 / span 6; order: 2; }
+      .media-container {   grid-column: col-start 10 / span 3; order: 3; }
     }
-  }
+  </style>
+{:else}
+  <style>
+    @media only screen and (min-width: 800px) {
+      .caption-container { grid-column: col-start 1 / span 3; order: 1; }
+      .body-container {    grid-column: col-start 4 / span 9; order: 2; }
+    }
 
-  @media only screen and (min-width: 800px) {
-    .caption-container {
-      grid-column: span 3;
+    @media only screen and (min-width: 1200px) {
+      .caption-container { grid-column: col-start 1 / span 2; order: 1; }
+      .body-container {    grid-column: col-start 3 / span 10; order: 2; }
     }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .caption-container {
-      grid-column: span 2;
-    }
-  }
-</style>
+  </style>
+{/if}

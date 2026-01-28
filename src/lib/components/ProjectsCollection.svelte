@@ -24,7 +24,9 @@
   }
 
   .project-item {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-top: var(--standard-top-border);
     padding-top: 0.5rem;
   }

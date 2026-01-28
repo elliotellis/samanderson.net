@@ -1,8 +1,8 @@
 <script>
   import { PortableText } from '@portabletext/svelte';
-  import VideoPlayer from '$lib/components/VideoPlayer.svelte'
-  import Caption from '$lib/components/blockContent/Caption.svelte'
-  import CaptionSubheading from '$lib/components/blockContent/CaptionSubheading.svelte'
+  import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+  import Caption from '$lib/components/blockContent/Caption.svelte';
+  import CaptionSubheading from '$lib/components/blockContent/CaptionSubheading.svelte';
   let { portableText } = $props();
 </script>
 
@@ -27,49 +27,17 @@
 <!-- <pre>{JSON.stringify(portableText.value, null, 2)}</pre> -->
 
 <style>
-  
-
   @media only screen and (min-width: 800px) {
-    
-    .media-container {
-      grid-column: span 9;
-    }
-
-    .video-with-caption.portrait {
-      grid-column: span 9;
-    }
-
-    .video-with-caption.portrait .media-container {
-      grid-column: span 6;
-    }
+    .caption-container { grid-column: span 3; order: 1; }
+    .media-container { grid-column: span 9; order: 2; }
+    .video-with-caption.portrait { grid-column: span 9; }
+    .video-with-caption.portrait .media-container { grid-column: span 6; }
   }
 
   @media only screen and (min-width: 1200px) {
-
-    .media-container {
-      grid-column: span 10;
-    }
-
-    .video-with-caption.portrait {
-      grid-column: span 6;
-    }
-
-    .video-with-caption.portrait .media-container {
-      grid-column: span 4;
-    }
-  }
-
-
-
-  @media only screen and (min-width: 800px) {
-    .caption-container {
-      grid-column: span 3;
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .caption-container {
-      grid-column: span 2;
-    }
+    .caption-container { grid-column: span 2; order: 1; }
+    .media-container { grid-column: span 10; order: 2; }
+    .video-with-caption.portrait { grid-column: span 6; }
+    .video-with-caption.portrait .media-container { grid-column: span 4; }
   }
 </style>

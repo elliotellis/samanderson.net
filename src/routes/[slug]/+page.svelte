@@ -1,13 +1,8 @@
 <script>
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import VideoWithCaption from '$lib/components/blockContent/VideoWithCaption.svelte'
-  import BodyTextSection from '$lib/components/blockContent/BodyTextSection.svelte'
-  import BodyTextWithPortraitMedia from '$lib/components/blockContent/BodyTextWithPortraitMedia.svelte'
-  import { PortableText } from '@portabletext/svelte';
-  import { page } from '$app/state';
+  import BlockContent from '$lib/components/blockContent/BlockContent.svelte'
   let { data } = $props();
-  console.log(data);
 </script>
 
 <svelte:head>
@@ -26,24 +21,12 @@
   </header>
 
   {#if data.page.body}
-  <main class="page-main-content grid site-padding">
-    <PortableText 
-      value={data.page.body}
-      
-      components={{
-        types: {
-          videoWithCaption: VideoWithCaption,
-          bodyText: BodyTextSection,
-          bodyTextWithPortraitMedia: BodyTextWithPortraitMedia
-        }
-      }}
-    />
-  </main>
+    <BlockContent value={data.page.body} />
   {/if}
 
 </article>
 
-<Footer siteCredit={page.url.pathname === '/about'} />
+<Footer siteCredit={data.page.slug.current === 'about'} />
 
 <style>
   .page-title-area {

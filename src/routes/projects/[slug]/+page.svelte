@@ -1,10 +1,7 @@
 <script>
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import VideoWithCaption from '$lib/components/blockContent/VideoWithCaption.svelte'
-  import BodyTextSection from '$lib/components/blockContent/BodyTextSection.svelte'
-  import BodyTextWithPortraitMedia from '$lib/components/blockContent/BodyTextWithPortraitMedia.svelte'
-  import { PortableText } from '@portabletext/svelte';
+  import BlockContent from '$lib/components/blockContent/BlockContent.svelte';
   let { data } = $props();
 </script>
 
@@ -21,19 +18,7 @@
     <h2>{data.project.description}</h2>
   </header>
 
-  <main class="project-main-content grid site-padding">
-    <PortableText 
-      value={data.project.body}
-      
-      components={{
-        types: {
-          videoWithCaption: VideoWithCaption,
-          bodyText: BodyTextSection,
-          bodyTextWithPortraitMedia: BodyTextWithPortraitMedia
-        }
-      }}
-    />
-  </main>
+  <BlockContent value={data.project.body} />
 
 </article>
 
@@ -50,33 +35,5 @@
     .page-title-area > * {
       grid-column: span 9;
     }
-  }
-
-  :global {
-
-    .body-container {
-      padding-top: 0.75rem;
-    }
-
-    .body-container > p:not(:first-child) {
-      text-indent: 1.5em;
-    }
-
-
-    .caption-container {
-      padding-top: 0.6rem;
-    }
-
-    .caption-container p {
-      font-size: var(--typesize-caption);
-      line-height: var(--leading-caption);
-    }
-
-    h5:not(:first-child) {
-      margin-top: 0.6rem;
-    }
-  }
-
-
-  
+  }  
 </style>
