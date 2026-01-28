@@ -15,7 +15,7 @@
 
   <header class="page-title-area grid site-padding">
     {#if data.page.titleShown}
-      <h1>testestetstetes {data.page.title}</h1>
+      <h1>{data.page.title}</h1>
     {/if}
     <h2>{data.page.description}</h2>
   </header>

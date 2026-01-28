@@ -8,7 +8,4 @@
 </h5>
 
 <style>
-  h5:not(:first-child) {
-    margin-top: 0.6rem;
-  }
 </style>

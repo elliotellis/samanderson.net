@@ -17,7 +17,13 @@ export async function load({ params, fetch }) {
           ...,
           "image": image.asset->url,
           "imageAlt": image.alt
-        }
+        },
+        _type == "bodyTextWithPortraitMedia" => {
+          ...,
+          "thumbnail": thumbnail.asset->url,
+          "altText": thumbnail.alt,
+          "videoFile": videoFile.asset->url
+        },
       }
     }`
 
