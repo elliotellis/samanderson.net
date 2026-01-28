@@ -32,6 +32,7 @@
 <style>
   .hero {
     height: calc(100vh - var(--nav-height-collapsed));
+    margin-top: var(--nav-height-collapsed);
     overflow-y: hidden;
     padding-top: 1rem;
     padding-bottom: var(--site-xmargin);

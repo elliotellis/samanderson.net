@@ -3,11 +3,16 @@
   import Footer from '$lib/components/Footer.svelte';
   import VideoWithCaption from '$lib/components/blockContent/VideoWithCaption.svelte'
   import BodyTextSection from '$lib/components/blockContent/BodyTextSection.svelte'
+  import BodyTextWithPortraitMedia from '$lib/components/blockContent/BodyTextWithPortraitMedia.svelte'
   import { PortableText } from '@portabletext/svelte';
   import { page } from '$app/state';
   let { data } = $props();
   console.log(data);
 </script>
+
+<svelte:head>
+  <title>{data.page.title} &ndash; Sam Anderson</title>
+</svelte:head>
 
 <Header />
 
@@ -28,7 +33,8 @@
       components={{
         types: {
           videoWithCaption: VideoWithCaption,
-          bodyText: BodyTextSection
+          bodyText: BodyTextSection,
+          bodyTextWithPortraitMedia: BodyTextWithPortraitMedia
         }
       }}
     />

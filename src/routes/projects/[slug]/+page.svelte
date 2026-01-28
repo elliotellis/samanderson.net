@@ -8,6 +8,10 @@
   let { data } = $props();
 </script>
 
+<svelte:head>
+  <title>{data.project.title} &ndash; Sam Anderson</title>
+</svelte:head>
+
 <Header />
 
 <article>
