@@ -1,12 +1,23 @@
 <script>
   import { PortableText } from '@portabletext/svelte';
-  import CaptionContainer from '$lib/components/blockContent/CaptionContainer.svelte'
   import VideoPlayer from '$lib/components/VideoPlayer.svelte'
+  import Caption from '$lib/components/blockContent/Caption.svelte'
+  import CaptionSubheading from '$lib/components/blockContent/CaptionSubheading.svelte'
   let { portableText } = $props();
 </script>
 
 <section class="content-section video-with-caption grid subgrid" class:portrait={portableText.value.portrait}>
-  <CaptionContainer value={portableText.value.caption} />
+  <div class="caption-container">
+    <PortableText 
+      value={portableText.value.caption}
+      components={{
+        block: {
+          caption: Caption,
+          captionSubheading: CaptionSubheading
+        }
+      }}
+    />
+  </div>
   
   <div class="media-container">
     <VideoPlayer src={portableText.value.videoFile} thumbnail={portableText.value.thumbnail} alt={portableText.value.alt} />
@@ -45,6 +56,20 @@
 
     .video-with-caption.portrait .media-container {
       grid-column: span 4;
+    }
+  }
+
+
+
+  @media only screen and (min-width: 800px) {
+    .caption-container {
+      grid-column: span 3;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .caption-container {
+      grid-column: span 2;
     }
   }
 </style>

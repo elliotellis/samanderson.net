@@ -29,6 +29,10 @@
 </section>
 
 <style>
+  .body-container {
+    margin-bottom: 2rem;
+  }
+  
   @media only screen and (min-width: 800px) {
     .text-container {
       grid-column: span 6;
