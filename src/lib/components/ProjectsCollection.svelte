@@ -21,6 +21,7 @@
 <style>
   .projects-collection-container {
     justify-items: stretch;
+    row-gap: calc(4 * var(--site-xmargin));
   }
 
   .project-item {
@@ -29,6 +30,48 @@
     justify-content: space-between;
     border-top: var(--standard-top-border);
     padding-top: 0.5rem;
+    position: relative;
+  }
+
+  .project-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -0.125rem; left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--key-colour);
+    transition: height var(--standard-transition-duration) ease-in-out;
+  }
+
+  .project-item:hover::before {
+    height: 0.25rem;
+  }
+
+  .media-container {
+    position: relative;
+  }
+
+  .media-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--key-colour);
+    opacity: 0;
+    transition: opacity var(--standard-transition-duration) ease-in-out;
+  }
+
+  .project-item:hover .media-container::after {
+    opacity: 0.25;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .projects-collection-container {
+      row-gap: calc(2 * var(--site-xmargin));
+    }
   }
 
   @media only screen and (min-width: 800px) {
@@ -54,13 +97,5 @@
   a {
     display: block;
     text-decoration: none;
-  }
-
-  .media-container {
-    transition: opacity var(--standard-transition-duration) ease-in-out;
-  }
-
-  .project-item:hover .media-container {
-    opacity: 0.75;
   }
 </style>
