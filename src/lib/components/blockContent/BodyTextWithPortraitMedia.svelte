@@ -9,7 +9,7 @@
 <section class="content-section body-text-with-portrait-media grid subgrid">
   <div class="media-container">
     {#if portableText.value.videoFile}
-      <VideoPlayer src={portableText.value.videoFile} poster={portableText.value.thumbnail} alt={portableText.value.thumbnailAlt} />
+      <VideoPlayer src={portableText.value.videoFile} thumbnail={portableText.value.thumbnail} alt={portableText.value.thumbnailAlt} />
     {/if}
     {#if portableText.value.image}
       <enhanced:img src={portableText.value.image} alt={portableText.value.imageAlt} />
