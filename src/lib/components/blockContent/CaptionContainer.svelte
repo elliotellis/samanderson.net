@@ -26,7 +26,8 @@
   }
 
   :global(.caption-container p) {
-    font-size: 0.8rem;
+    font-size: var(--typesize-caption);
+    line-height: var(--leading-caption);
   }
   
   @media only screen and (min-width: 800px) {

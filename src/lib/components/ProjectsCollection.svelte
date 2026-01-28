@@ -2,7 +2,7 @@
   let { projects } = $props();
 </script>
 
-<section class="projects-collection-container grid site-padding">
+<section class="projects-collection-container grid site-padding" id="projects">
 
   {#each projects as project}
     <a class="project-item" href={'/projects/' + project.slug.current}>

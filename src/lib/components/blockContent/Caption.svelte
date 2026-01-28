@@ -6,9 +6,3 @@
 <p class="caption">
   <PortableText value={portableText.value}/>
 </p>
-
-<style>
-  .caption {
-    font-size: 0.8rem;
-  }
-</style>

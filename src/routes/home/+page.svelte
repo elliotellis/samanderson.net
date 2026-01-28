@@ -6,42 +6,30 @@
 </script>
 
 <svelte:head>
-  <title>Sam Anderson &ndash; {data.siteSettings[0].siteSubheading}</title>
+  <title>Sam Anderson &ndash; Director, producer &amp; editor</title>
 </svelte:head>
 
 <Header collapsedByDefault={true} />
 
-<main style="height: 100vh; padding: 0.5rem 0 0;">
+<main>
 
   <section class="hero site-padding">
-    <div class="text-container grid" style="margin-bottom: 2rem;">
+    <div class="text-container grid">
       <h1>Sam&nbsp;Anderson<br/></h1>
       <h2>{data.siteSettings[0].siteSubheading}</h2>
-      <p class="caption">
-        <span><a href="mailto:me@samanderson.net">me@samanderson.net</a></span>
-        <span>Full site coming soon</span>
-      </p>
     </div>
     <div class="media-container">
       <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop playsinline></video>
     </div>
   </section>
 
+  <ProjectsCollection projects={data.projects} />
+
 </main>
 
+<Footer />
 
 <style>
-
-  .caption {
-    color: var(--text-colour-minor);
-    margin-top: 1rem;
-  }
-
-  .caption span {
-    display: inline-block;
-    margin-right: 0.5rem;
-  }
-  
   .hero {
     height: calc(100vh - var(--nav-height-collapsed));
     overflow-y: hidden;

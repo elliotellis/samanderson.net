@@ -37,9 +37,9 @@
   }
 
   nav {
+    width: calc(100% + var(--site-xmargin));
     height: var(--nav-height);
     margin-left: calc(-1 * var(--site-xmargin));
-    width: calc(100% + var(--site-xmargin));
     background-color: var(--key-colour);
     color: var(--text-colour-on-key);
     transition: height var(--standard-transition-duration) ease-in-out;
@@ -63,6 +63,8 @@
     list-style-type: none;
     display: flex;
     align-items: end;
+    height: var(--nav-height-dtp);
+    padding-bottom: 0.25rem;
   }
 
   li {
@@ -70,7 +72,6 @@
   }
 
   .logo {
-    padding-top: 0.5rem;
     font-weight: var(--fontweight-bold);
   }
 
@@ -86,7 +87,7 @@
     }
 
     ul {
-      height: 2.25rem;
+      height: var(--nav-height);
     }
 
     .logo { 
