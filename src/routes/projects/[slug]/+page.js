@@ -4,7 +4,11 @@ export async function load({ params, fetch }) {
   const { slug } = params
   const query = `
     *[_type == "project" && slug.current == $slug][0]{
-      ...,
+      ..., 
+      thumbnail {
+        "url": asset->url,
+        ...
+      },
       body[]{
         ...,
         _type == "videoWithCaption" => {

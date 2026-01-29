@@ -1,4 +1,5 @@
 <script>
+  import { page } from '$app/state';
 	import favicon from '$lib/assets/favicon.svg';
 	import faviconPng1x from '$lib/assets/favicon.png';
 	import faviconPng2x from '$lib/assets/favicon@2x.png';
@@ -6,9 +7,16 @@
 </script>
 
 <svelte:head>
+  <meta property="og:locale" content="en_GB">
 	<link rel="icon" type="image/png" href={faviconPng1x} />
 	<link rel="icon" type="image/png" href={faviconPng2x} />
 	<link rel="icon" href={favicon} />
+  <link rel="canonical" href={'https://samanderson.net' + page.url.pathname} />
+  <meta property="og:url" content={'https://samanderson.net' + page.url.pathname}>
+  <meta name="twitter:url" content={'https://samanderson.net' + page.url.pathname}>
+  <meta property="og:site_name" content="Sam Anderson">
+  <meta property="og:see_also" content="https://samanderson.net">
+  <meta name="twitter:card" content="summary">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="c99b450e-38ce-4bff-a442-cf462f8a6a5e"></script>
 </svelte:head>
 

@@ -1,30 +1,25 @@
 <script>
   import { page } from '$app/state';
-  let { data } = $props();
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
   import ProjectsCollection from "$lib/components/ProjectsCollection.svelte";
+  let { data } = $props();
 </script>
-
 
 <svelte:head>
   <!-- Page title -->
   <title>Sam Anderson &ndash; {data.siteSettings[0].siteSubheading}</title>
-  <meta property="og:title" content={data.siteSettings[0].siteSubheading + ' &ndash; Sam Anderson'}>
-  <meta property="twitter:title" content={data.siteSettings[0].siteSubheading + ' &ndash; Sam Anderson'}>
+  <meta property="og:title" content="Sam Anderson &ndash; {data.siteSettings[0].siteSubheading}">
+  <meta property="twitter:title" content="Sam Anderson &ndash; {data.siteSettings[0].siteSubheading}">
   <!-- Page url -->
   <meta property="og:url" content={'https://samanderson.net' + page.url.pathname}>
-  <meta name="twitter:url" content={'https://samanderson.net' + page.url.pathname}>
+  <meta name="twitter:url" content="{{pageUrl}}">
   <!-- Page image -->
-  {#if data.siteSettings[0].siteSharingImage}
-    <meta property="og:image" content={data.siteSettings[0].siteSharingImage}>
-    <meta name="twitter:image" content={data.siteSettings[0].siteSharingImage}>
-  {/if}
+  <meta property="og:image" content="">
+  <meta name="twitter:image" content="">
   <!-- Page description -->
-  {#if data.siteSettings[0].siteDescription}
-    <meta property="og:description" content={data.siteSettings[0].siteDescription}>
-    <meta name="twitter:description" content={data.siteSettings[0].siteDescription}>
-  {/if}
+  <meta property="og:description" content="{data.siteSettings[0].description}">
+  <meta name="twitter:description" content="{data.siteSettings[0].description}">
   <!-- Site title -->
   <meta property="og:site_name" content="Sam Anderson">
   <!-- Site homepage -->
@@ -35,28 +30,39 @@
 
 <Header collapsedByDefault={true} />
 
-<main>
+<main style="height: 100vh; padding: 0.5rem 0 0;">
 
   <section class="hero site-padding">
-    <div class="text-container grid">
+    <div class="text-container grid" style="margin-bottom: 2rem;">
       <h1>Sam&nbsp;Anderson<br/></h1>
       <h2>{data.siteSettings[0].siteSubheading}</h2>
+      <p class="caption">
+        <span><a href="mailto:me@samanderson.net">me@samanderson.net</a></span>
+        <span>Full site coming soon</span>
+      </p>
     </div>
     <div class="media-container">
       <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop playsinline></video>
     </div>
   </section>
 
-  <ProjectsCollection projects={data.projects} />
-
 </main>
 
-<Footer />
 
 <style>
+
+  .caption {
+    color: var(--text-colour-minor);
+    margin-top: 1rem;
+  }
+
+  .caption span {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  
   .hero {
     height: calc(100vh - var(--nav-height-collapsed));
-    margin-top: var(--nav-height-collapsed);
     overflow-y: hidden;
     padding-top: 1rem;
     padding-bottom: var(--site-xmargin);

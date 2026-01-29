@@ -7,6 +7,24 @@
 
 <svelte:head>
   <title>{data.page.title} &ndash; Sam Anderson</title>
+  <meta property="og:title" content={data.page.title + ' &ndash; Sam Anderson'}>
+  <meta property="twitter:title" content={data.page.title + ' &ndash; Sam Anderson'}>
+  <!-- Page image -->
+  {#if data.page.thumbnail.url}
+    <meta property="og:image" content={data.page.thumbnail.url}>
+    <meta name="twitter:image" content={data.page.thumbnail.url}>
+  {/if}
+  <!-- Page description -->
+  {#if data.page.description}
+    <meta property="og:description" content={data.page.description}>
+    <meta name="twitter:description" content={data.page.description}>
+  {/if}
+  <!-- Site title -->
+  <meta property="og:site_name" content="Sam Anderson">
+  <!-- Site homepage -->
+  <meta property="og:see_also" content="https://samanderson.net">
+  <!-- Twitter card type -->
+  <meta name="twitter:card" content="summary">
 </svelte:head>
 
 <Header />
