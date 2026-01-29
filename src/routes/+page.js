@@ -7,11 +7,12 @@ export async function load() {
       title, 
       slug, 
       description, 
+      orderIndex,
       thumbnail {
         "url": asset->url,
         ...
       }
-    }
+    } | order(orderIndex asc)
   `
 
   const siteSettingsQuery = `
