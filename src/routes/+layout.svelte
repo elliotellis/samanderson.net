@@ -26,7 +26,7 @@
 
 <style>
 
-  .debug-grid-overlay {
+  /*.debug-grid-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@
     z-index: 5;
     background-image: linear-gradient(0deg, rgba(150,255,150,1) 0.0625rem, rgba(255,255,255,0) 0);
     background-size: 1rem 1rem;
-  }
+  }*/
 
   @font-face {
 		font-family: 'Sam';

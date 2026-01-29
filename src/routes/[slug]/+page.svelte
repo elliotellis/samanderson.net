@@ -9,7 +9,7 @@
   <title>{data.page.title} &ndash; Sam Anderson</title>
   <meta property="og:title" content={data.page.title + ' &ndash; Sam Anderson'}>
   <meta property="twitter:title" content={data.page.title + ' &ndash; Sam Anderson'}>
-  <!-- Page image -->
+  <!-- Page image --
   {#if data.page.thumbnail.url}
     <meta property="og:image" content={data.page.thumbnail.url}>
     <meta name="twitter:image" content={data.page.thumbnail.url}>
