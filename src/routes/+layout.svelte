@@ -4,6 +4,7 @@
 	import faviconPng1x from '$lib/assets/favicon.png';
 	import faviconPng2x from '$lib/assets/favicon@2x.png';
 	let { children } = $props();
+  const showBaselineGrid = true;
 </script>
 
 <svelte:head>
@@ -22,20 +23,39 @@
 
 {@render children()}
 
-<!-- <div class="debug-grid-overlay base100"></div> -->
+{#if showBaselineGrid}
+  <style>
+    body {
+      background-image: 
+        linear-gradient(to top, 
+          rgba(0,255,255,1) 0, 
+          transparent 1px 50%, 
+          rgba(0,255,255,0.333) 50%, 
+          transparent calc(50% + 1px) 100%
+        );
+      background-repeat: repeat-y;
+      background-size: 100% 1rem;
+    }
+  </style>
+{/if}
 
 <style>
 
-  /*.debug-grid-overlay {
+  /*.baseline-grid-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 100%;
-    opacity: 0.75;
-    z-index: 5;
-    background-image: linear-gradient(0deg, rgba(150,255,150,1) 0.0625rem, rgba(255,255,255,0) 0);
+    opacity: 0.8;
+    z-index: -1;
     background-size: 1rem 1rem;
+    background-image: repeating-linear-gradient(0deg, rgb(205, 194, 97), rgb(205, 194, 97) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0));
+  }
+
+  .baseline-grid-overlay.sub-half {
+    top: 0.5rem;
+    opacity: 0.3;
   }*/
 
   @font-face {
@@ -85,9 +105,9 @@
       --typesize-heading-large-dtp: 2rem;
       --leading-heading-large-dtp: 2.25rem;
 
-      --typesize-caption-mob: 0.8rem;
+      --typesize-caption-mob: 0.83rem;
       --leading-caption-mob: 1rem;
-      --typesize-body-mob: 1.1rem;
+      --typesize-body-mob: 1.05rem;
       --leading-body-mob: 1.25rem;
       --typesize-heading-small-mob: 1.35rem;
       --leading-heading-small-mob: 1.5rem;
@@ -170,9 +190,17 @@
 
 		h1 {
 			margin: 0;
-			font-size: var(--typesize-heading-large);
-    	line-height: var(--leading-heading-large);
 			color: var(--key-colour);
+      --leading: var(--leading-heading-large);
+			font-size: var(--typesize-heading-large);
+    	line-height: var(--leading);
+      padding-top: calc(calc(var(--leading) - 1cap) / 2);
+      margin-bottom: 
+        calc(
+          var(--leading) - calc(
+            calc(var(--leading) - 1cap) / 2
+          )
+        );
 		}
 
 		h2 {
@@ -234,6 +262,10 @@
 			border-top: var(--standard-top-border);
       margin-bottom: 4rem;
 		}
+
+    .body-container > * {
+      max-width: 48rem;
+    }
 
 		.media-container img {
 			width: 100%;
