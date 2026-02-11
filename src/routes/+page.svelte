@@ -43,7 +43,19 @@
       <h2>{data.siteSettings[0].siteSubheading}</h2>
     </div>
     <div class="media-container">
-      <video src={data.siteSettings[0].homepageAutoplayReel.url} muted autoplay loop playsinline></video>
+      <video muted autoplay loop playsinline>
+        <!-- 16:9 format -->
+        <source 
+          src={data.siteSettings[0].homepageAutoplayReel.url}
+          type="video/mp4"
+          media="(min-width: 600px) and (min-height: 800px)"
+        >
+        <!-- 1:1 format by default -->
+        <source
+          src={data.siteSettings[0].homepageAutoplayReelMobile.url}
+          type="video/mp4"
+        >
+      </video>
     </div>
   </section>
 
@@ -55,7 +67,9 @@
 
 <style>
   .hero {
+    --hero-min-total-height: 30rem;
     height: calc(100vh - var(--nav-height-collapsed));
+    min-height: calc(var(--hero-min-total-height) - var(--nav-height-collapsed));
     margin-top: var(--nav-height-collapsed);
     overflow-y: hidden;
     padding-top: 1rem;
@@ -75,6 +89,12 @@
 
   @media only screen and (min-width: 800px) {
     .text-container > * {
+      grid-column: col-start / span 9;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .text-container > * {
       grid-column: col-start / span 6;
     }
   }
@@ -86,15 +106,19 @@
 
   .media-container {
     height: calc(100vh - 7.5rem - var(--nav-height-collapsed));
+    min-height: calc(var(--hero-min-total-height) - 7.5rem - var(--nav-height-collapsed));
     flex-grow: 0;
     min-height: 0;
+    display: flex;
+    align-items: end;
+    justify-content: end;
   }
 
   .media-container video {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
   }
 
 </style>

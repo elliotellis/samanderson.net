@@ -21,6 +21,9 @@ export async function load() {
       siteSubheading,
       homepageAutoplayReel {
         "url": asset->url
+      },
+      homepageAutoplayReelMobile {
+        "url": asset->url
       }
     }
   `
