@@ -30,7 +30,7 @@
     }
 
     .body-container > p:not(:first-child) {
-      text-indent: 1.5em;
+      text-indent: 1lh;
     }
 
 

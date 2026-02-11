@@ -4,7 +4,7 @@
 	import faviconPng1x from '$lib/assets/favicon.png';
 	import faviconPng2x from '$lib/assets/favicon@2x.png';
 	let { children } = $props();
-  const showBaselineGrid = true;
+  const showBaselineGrid = false;
 </script>
 
 <svelte:head>
@@ -40,23 +40,6 @@
 {/if}
 
 <style>
-
-  /*.baseline-grid-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    opacity: 0.8;
-    z-index: -1;
-    background-size: 1rem 1rem;
-    background-image: repeating-linear-gradient(0deg, rgb(205, 194, 97), rgb(205, 194, 97) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0));
-  }
-
-  .baseline-grid-overlay.sub-half {
-    top: 0.5rem;
-    opacity: 0.3;
-  }*/
 
   @font-face {
 		font-family: 'Sam';
@@ -139,7 +122,6 @@
       --typesize-heading-large: var(--typesize-heading-large-mob);
       --leading-heading-large: var(--leading-heading-large-mob);
 
-
       --site-xmargin: var(--site-xmargin-mob);
       --nav-height: var(--nav-height-mob);
 
@@ -153,17 +135,13 @@
       min-width: 320px;
       min-height: 100vh;
 			margin: 0;
-			/*padding: var(--nav-height-collapsed) 0 0;*/
       display: grid;
       grid-template-rows: 1fr auto;
-
-      /* for debugging only*/
       position: relative;
     }
 
     @media only screen and (min-width: 600px) {
       body {
-
         --typesize-caption: var(--typesize-caption-dtp);
         --leading-caption: var(--leading-caption-dtp);
         --typesize-body: var(--typesize-body-dtp);
@@ -191,16 +169,8 @@
 		h1 {
 			margin: 0;
 			color: var(--key-colour);
-      --leading: var(--leading-heading-large);
 			font-size: var(--typesize-heading-large);
-    	line-height: var(--leading);
-      padding-top: calc(calc(var(--leading) - 1cap) / 2);
-      margin-bottom: 
-        calc(
-          var(--leading) - calc(
-            calc(var(--leading) - 1cap) / 2
-          )
-        );
+    	line-height: var(--leading-heading-large);
 		}
 
 		h2 {
@@ -270,34 +240,6 @@
 		.media-container img {
 			width: 100%;
 			display: block;
-		}
-
-		.debug {
-			position: fixed;
-			top: 0; right: 0;
-			font-family: Arial;
-			background-color: yellow;
-			color: black;
-			font-weight: 700;
-			padding: 5px;
-			opacity: 5%;
-			max-width: 40%;
-		}
-
-		.debug:hover {
-			opacity: 50%;
-		}
-
-		.debug::before {
-			content: 'Debug information';
-			font-weight: 400;
-			font-size: 15px;
-		}
-
-		.debug-measure {
-			position: fixed;
-			top: 0; left: 0;
-			background-color: orange;
 		}
 
   } /* :global */
