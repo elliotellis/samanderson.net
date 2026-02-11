@@ -140,7 +140,9 @@
       position: relative;
     }
 
-    @media only screen and (min-width: 600px) {
+    @media only screen 
+      and (min-width: 600px)
+      and (min-height: 600px) {
       body {
         --typesize-caption: var(--typesize-caption-dtp);
         --leading-caption: var(--leading-caption-dtp);
