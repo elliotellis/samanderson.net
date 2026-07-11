@@ -47,5 +47,5 @@
     .page-title-area > * {
       grid-column: span 9;
     }
-  }  
+  }
 </style>
