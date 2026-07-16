@@ -103,7 +103,7 @@
 			--nav-height-mob: 4.75rem;
 			--nav-height-dtp: 3rem;
 			--nav-height-collapsed: 0.5rem;
-			--standard-transition-duration: 0.6s;
+			--standard-transition-duration: 0.5s;
     }
 
     body {
@@ -166,6 +166,16 @@
 
     a[target="_blank"]:after {
       content: '\2197';
+    }
+
+    button {
+      border: none;
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
     }
 
 		h1 {
