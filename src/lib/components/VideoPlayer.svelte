@@ -18,14 +18,18 @@
 </script>
 
 <div class="video-container">
-  <video 
-    src={opened ? src : ''} 
-    poster={thumbnail}
-    bind:currentTime={currentTime}
-    bind:duration={totalDuration}
-    bind:paused
-    bind:muted
-  ></video>
+  {#if opened}
+    <video 
+      src={opened ? src : ''} 
+      poster={thumbnail}
+      bind:currentTime={currentTime}
+      bind:duration={totalDuration}
+      bind:paused
+      bind:muted
+    ></video>
+  {:else}
+    <img src={thumbnail} alt="">
+  {/if}
 
   {#if active}
     <div class="controls-container active-controls">
