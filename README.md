@@ -8,10 +8,7 @@
 
 ### To do
 
-- Video controls component
-  - Videos only load when user chooses to watch
-  - Custom UI in-line with rest of site
-- .webm video encoding to reduce asset size and improve load times, especially homepage
+- .webm encode project videos
 - Fix responsive+webm/avif images (enhanced:img not working with CMS properly)
 - Minor typographic improvements (leading on body text most notably)
 - Bottom blue bar right-side gap
