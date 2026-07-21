@@ -19,12 +19,12 @@ export async function load() {
     *[_id == "siteSettings"]
     {
       siteSubheading,
-      homepageAutoplayReel {
-        "url": asset->url
+      homepageReel {
+        "mobileMp4": mobileMp4.asset->url,
+        "mobileWebm": mobileWebm.asset->url,
+        "desktopMp4": desktopMp4.asset->url,
+        "desktopWebm": desktopWebm.asset->url,
       },
-      homepageAutoplayReelMobile {
-        "url": asset->url
-      }
     }
   `
 

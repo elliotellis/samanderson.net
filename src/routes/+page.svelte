@@ -4,6 +4,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
   import ProjectsCollection from "$lib/components/ProjectsCollection.svelte";
+  $inspect(data);
 </script>
 
 
@@ -44,15 +45,22 @@
     </div>
     <div class="media-container">
       <video muted autoplay loop playsinline>
-        <!-- 16:9 format -->
         <source 
-          src={data.siteSettings[0].homepageAutoplayReel.url}
+          src={data.siteSettings[0].homepageReel.desktopWebm}
+          type="video/webm"
+          media="(min-width: 600px) and (min-height: 800px)"
+        >
+        <source 
+          src={data.siteSettings[0].homepageReel.desktopMp4}
           type="video/mp4"
           media="(min-width: 600px) and (min-height: 800px)"
         >
-        <!-- 1:1 format by default -->
         <source
-          src={data.siteSettings[0].homepageAutoplayReelMobile.url}
+          src={data.siteSettings[0].homepageReel.mobileWebm}
+          type="video/webm"
+        >
+        <source
+          src={data.siteSettings[0].homepageReel.mobileMp4}
           type="video/mp4"
         >
       </video>
